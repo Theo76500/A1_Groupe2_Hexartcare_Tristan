@@ -13,4 +13,4 @@ Pour les modifications du fichier param.h, la fonction fopen renvoie vers un emp
 
 Le fichier .csv à l'emplacement MODULE 3\fichier.csv est un fichier généré par Processing.
 
-Le fichier .csv à l'emplacement MODULE 4\fichier.csv est un fichier créer par nous même. Il servait de test pour réaliser le module 4.
+Le fichier .csv à l'emplacement MODULE 4\fichier.csv est un fichier créé par nous même. Il servait de test pour réaliser le module 4.
