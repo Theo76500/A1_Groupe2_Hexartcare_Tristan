@@ -1,0 +1,153 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "action.h"
+#include "menu.h"
+#include "donnees.h"
+
+/***** FONCTION AUTRE *****/
+
+/*
+void recherche(char tableau[n],char string_recherche[1000]){
+  int i=1;
+  do {
+    i++;
+  } while((i<=n)^(tableau[i]!=string_recherche));
+
+  if (i<=n){
+    printf("tableau[%d]=%s\n",i,string_recherche );
+  }
+
+  else{
+    printf("votre recherche n'est pas dans ce fichier");
+  }
+
+}
+*/
+
+
+/***** FONCTION DU MENU ******/
+
+
+void ordreOriginal()
+{
+  char tab[10000];
+
+  FILE* csv = NULL;
+  csv = fopen("fichier.csv", "r");
+
+  if (csv != NULL)
+  {
+    while(fgets(tab, 10000, csv) != NULL)
+    {
+      printf("%s", tab);
+    }
+  }
+  else
+  {
+    printf("ERREUR OUVERTURE DU FICHIER");
+  }
+  fclose(csv);
+}
+
+void nbLigne()
+{
+  int nb=0;
+  int c;
+  FILE* csv = NULL;
+  csv = fopen("fichier.csv", "r");
+  while((c = getc(csv)) != EOF){
+    if (c=='\n'){
+      nb++;
+    }
+  }
+  printf("Le fichier csv contient %d lignes.\n",nb+1);
+}
+
+
+void croissant(Donnee **File)
+{
+  int tri_fait = 0;
+  int memoire_temps = 0;
+  int memoire_pouls = 0;
+
+  while ((tri_fait=0))
+  {
+    Donnee *element = NULL;
+    element = *File;
+    tri_fait=1;
+
+    while (element != NULL)
+    {
+      Donnee *suivant = NULL;
+      suivant = element -> suivant;
+
+
+      if (element->temps > suivant->temps)
+      {
+        memoire_temps = element -> temps;
+        memoire_pouls = element -> pouls;
+        element -> temps = suivant -> temps;
+        element -> pouls = suivant -> pouls;
+        suivant -> temps = memoire_temps;
+        suivant -> pouls = memoire_pouls;
+        tri_fait=0;
+        afficherFile(&Recup);
+
+      }
+      element = element -> suivant;
+    }
+  }
+}
+
+void decroissant(Donnee **File)
+{
+  int tri_fait = 0;
+  int memoire_temps = 0;
+  int memoire_pouls = 0;
+
+  while ((tri_fait=0))
+  {
+    Donnee *element = NULL;
+    element = *File;
+    tri_fait=1;
+
+    while (element != NULL)
+    {
+      Donnee *suivant = element -> suivant;
+      if (element->temps < suivant->temps)
+      {
+        memoire_temps = element -> temps;
+        memoire_pouls = element -> pouls;
+        element -> temps = suivant -> temps;
+        element -> pouls = suivant -> pouls;
+        suivant -> temps = memoire_temps;
+        suivant -> pouls = memoire_pouls;
+
+      }
+      element = element -> suivant;
+    }
+  }
+}
+
+
+/*
+int tempsChoisi(Donnee *FILE)
+{
+  int tempschoisi;
+
+  Donnee *tmp = FILE;
+  printf("Choisissez un temps : ");
+  scanf("%d", &tempschoisi);
+
+  while(tmp != NULL)
+  {
+    if(tmp->temps == tempschoisi)
+    {
+      return tmp;
+    }
+    tmp = tmp -> suivant;
+  }
+  return NULL;
+}
+*/

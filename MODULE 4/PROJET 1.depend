@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1542296958 source:c:\users\theo-pc\desktop\exia\_projet\projet 1\module 4\action.c
+	<stdio.h>
+	<stdlib.h>
+	"action.h"
+	"menu.h"
+	"donnees.h"
+
+1542294066 c:\users\theo-pc\desktop\exia\_projet\projet 1\module 4\action.h
+	"donnees.h"
+
+1542294060 source:c:\users\theo-pc\desktop\exia\_projet\projet 1\module 4\donnees.c
+	<stdio.h>
+	<stdlib.h>
+	"donnees.h"
+
+1542294068 c:\users\theo-pc\desktop\exia\_projet\projet 1\module 4\donnees.h
+
+1542294102 source:c:\users\theo-pc\desktop\exia\_projet\projet 1\module 4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"donnees.h"
+	"action.h"
+
+1542294065 c:\users\theo-pc\desktop\exia\_projet\projet 1\module 4\menu.h
+	<stdio.h>
+	<stdlib.h>
+	"donnees.h"
+
+1542294051 source:c:\users\theo-pc\desktop\exia\_projet\projet 1\module 4\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"action.h"
+
