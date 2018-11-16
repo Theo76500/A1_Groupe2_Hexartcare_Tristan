@@ -20,7 +20,7 @@ void menu(Donnee *Recup)
   printf("=== MENU === \n\n");
   printf("1. Afficher les donnees dans l'ordre du fichier .csv \n\n");
   printf("2. Afficher les donnees en ordre croissant/decroissant en fonction du temps \n\n");
-  printf("2. Afficher les donnees en ordre croissant/decroissant en fonction du pouls  \n\n");
+  printf("3. Afficher les donnees en ordre croissant/decroissant en fonction du pouls  \n\n");
   printf("4. Rechercher et afficher les donnees pour un temps particulier \n\n");
   printf("5. Afficher la moyenne de pouls sur une plage de temps donnee \n\n");
   printf("6. Afficher le nombre de lignes de donnees actuellement en memoire \n\n");
